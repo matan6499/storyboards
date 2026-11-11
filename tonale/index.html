@@ -27,6 +27,7 @@ h1{font-family:var(--title);font-stretch:125%;font-weight:900;font-size:clamp(28
 .legal{background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 6px 6px;line-height:0}
 .legal img{width:100%;display:block}
 .ttl{position:absolute;left:0;right:0;top:16%;text-align:center;direction:ltr;font-family:var(--title);font-stretch:125%;font-weight:900;color:#fff;font-size:clamp(10px,1.25vw,14px);letter-spacing:.04em;line-height:1.1;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.wm{position:absolute;left:12%;right:12%;top:14%;width:76%;filter:drop-shadow(0 2px 10px rgba(0,0,0,.6))}
 .ttl.low{top:auto;bottom:12%}
 .endcard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6%;background:#000}
 .endcard img{width:22%}
@@ -74,19 +75,20 @@ a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 
 <script>
 const S=[
-["0:00","T01","קו אור לבן מצייר את קו הגג והכתף בחושך","",""],
+["0:00","T01","קו אור לבן מצייר את קו הגג והכתף בחושך. הלוגו Alfa Romeo NEW Tonale בלבן","WM",""],
 ["0:02.5","T02","הקו נוחת על הפנס, שלושת מודולי ה-LED נדלקים","","קו האור הופך לקו הפנס"],
 ["0:04.5","T04","הגריל המשולש והסמל, אור עובר על הכרום","ITALIAN BY DESIGN","",0,1],
 ["0:07.5","T05","גלגל חוגת טלפון מסתובב לאט","",""],
 ["0:09.5","black","שחור ושקט, חצי שנייה","",""],
 ["0:10.1","T07","אצבע על כפתור ההנעה שעל ההגה, השעון נדלק. המוזיקה נפתחת","","עיגול הגלגל הופך לעיגול השעון",1],
-["0:11.5","T08","הפנסים האחוריים נדלקים באדום","",""],
+["0:11.5","T08x","מצלמה נמוכה מאחור: האגזוז, אוויר חם רועד, והמנוע מתעורר בגרגור. הסאונד הוא הדרופ","",""],
 ["0:13","T09v2","רחפן ישר מעל הרכב, כביש חשוך בדמדומים","DRIVEN BY PASSION",""],
 ["0:15","T11","נסיעה בכביש חוף בשקיעה, מצלמה נמוכה עוקבת","",""],
 ["0:16.5","T12bv2","הרכב מתקרב למצלמה בכביש חשוך בלילה, הפנסים דולקים","",""],
 ["0:18","T10","גלגל על אספלט רטוב בלילה","",""],
 ["0:19","T12","חזרה לבמה, צינורות האור נדלקים מעל הרכב","",""],
 ["0:21","T13v2","שוט גיבור: פרופיל צד על רצפה מבריקה, אור עליון מצייר את הגג","ALFA ROMEO TONALE",""],
+["0:23","T14x","הטונאלה יוצאת בתאוצה ונעלמת מהפריים, חיתוך חד ללוגו","",""],
 ["0:24.1","end","לוגו אלפא רומיאו על שחור, ומתחתיו שורת הסיום","",""],
 ["0:26.6","closer","הסגיר של סמלת, עם הסאונד שלו","",""]];
 document.getElementById('board').innerHTML=S.map((x,i)=>{
@@ -94,7 +96,7 @@ document.getElementById('board').innerHTML=S.map((x,i)=>{
   let inner;
   if(img==='black') inner='<div class="black">שקט</div>';
   else if(img==='end') inner='<div class="endcard"><img src="img/alfa_logo.png" alt="לוגו אלפא רומיאו"><div class="en">The new Alfa Romeo Tonale</div><div class="he">עכשיו בישראל</div></div>';
-  else inner=`<img class="bg" src="img/${img}.jpg" alt="${desc}" loading="lazy">${ttl?`<div class="ttl${low?' low':''}">${ttl}</div>`:''}`;
+  else inner=`<img class="bg" src="img/${img}.jpg" alt="${desc}" loading="lazy">${ttl==='WM'?'<img class="wm" src="img/wordmark.png" alt="Alfa Romeo NEW Tonale">':(ttl?`<div class="ttl${low?' low':''}">${ttl}</div>`:'')}`;
   const legal=img==='closer'?'':'<div class="legal"><img src="img/legal.jpg" alt="דרגת זיהום אוויר 9-10, רמת אבזור בטיחותי 3, לפרטים alfaromeo.co.il"></div>';
   return `<figure class="shot${drop?' drop':''}"><div class="frame"${img==='closer'?' style="border-bottom:1px solid var(--line);border-radius:6px"':''}>${inner}<span class="num">${i+1}</span><span class="tc">${tc}</span></div>${legal}<p class="desc">${desc}</p>${why?`<p class="why">${why}</p>`:''}</figure>`;
 }).join('');
