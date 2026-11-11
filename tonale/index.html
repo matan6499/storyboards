@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head>
+<title>סטוריבורד Alfa Romeo Tonale</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800;125,900&family=Heebo:wght@400;500&display=swap">
+<style>
+*{box-sizing:border-box}img{max-width:100%}
+/* Layout: a film board on a dark stage, one Tonale film, shots in order with timecode. Frames carry the real titles and legal strip as they will appear. */
+:root{
+  --stage:#0c0d10; --panel:#15171c; --line:#262a33; --ink:#eef0f3; --dim:#9aa1ad;
+  --teal:#22A5C4; --alfa:#b3122e;
+  --title:"Archivo","Arial Black",sans-serif; --heb:"Almoni","Heebo",system-ui,sans-serif; --body:"Heebo",system-ui,sans-serif;
+  color-scheme:dark;
+}
+body{background:var(--stage);color:var(--ink);font-family:var(--body);direction:rtl;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-block:40px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:40px}
+header{display:flex;flex-direction:column;gap:12px}
+.eyebrow{font-size:13px;letter-spacing:.06em;color:var(--teal)}
+h1{font-family:var(--title);font-stretch:125%;font-weight:900;font-size:clamp(28px,5vw,46px);line-height:1.05;margin:0;direction:ltr;text-align:right}
+.lead{color:var(--dim);font-size:16px;line-height:1.7;max-width:68ch;margin:0}
+.spec{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--dim)}
+.board{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:24px 16px}
+.shot{display:flex;flex-direction:column;gap:8px;min-width:0;margin:0}
+.frame{position:relative;aspect-ratio:16/9;max-width:100%;overflow:hidden;background:#000;border-radius:6px 6px 0 0;border:1px solid var(--line);border-bottom:0}
+.frame img.bg{width:100%;height:100%;object-fit:cover;display:block}
+.legal{background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 6px 6px;line-height:0}
+.legal img{width:100%;display:block}
+.ttl{position:absolute;left:0;right:0;top:16%;text-align:center;direction:ltr;font-family:var(--title);font-stretch:125%;font-weight:900;color:#fff;font-size:clamp(10px,1.25vw,14px);letter-spacing:.04em;line-height:1.1;text-shadow:0 2px 14px rgba(0,0,0,.55)}
+.ttl.low{top:auto;bottom:12%}
+.endcard{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6%;background:#000}
+.endcard img{width:22%}
+.endcard .en{font-family:var(--title);font-stretch:125%;font-weight:800;font-size:clamp(11px,1.3vw,14px);direction:ltr}
+.endcard .he{font-family:var(--heb);font-weight:700;font-size:clamp(13px,1.6vw,17px)}
+.black{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#4c525d;font-size:13px}
+.tc{position:absolute;top:8px;left:8px;font-size:11px;background:rgba(0,0,0,.65);color:var(--teal);padding:2px 7px;border-radius:4px;direction:ltr;font-variant-numeric:tabular-nums}
+.num{position:absolute;top:8px;right:8px;font-size:11px;background:rgba(0,0,0,.65);color:#fff;padding:2px 7px;border-radius:4px;font-variant-numeric:tabular-nums}
+.drop .frame,.drop .legal{border-color:var(--teal)}
+.desc{font-size:14px;line-height:1.55;margin:0}
+.ref{display:flex;align-items:center;gap:10px;margin-top:2px}
+.ref img{width:96px;aspect-ratio:16/9;object-fit:cover;border-radius:4px;border:1px solid var(--line);flex:none}
+.ref span{font-size:12px;color:var(--dim);direction:ltr}
+.why{font-size:12px;color:var(--teal);margin:0}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.note{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.note h3{font-family:var(--body);font-weight:500;font-size:16px;margin:0}
+.note p,.note li{color:var(--dim);font-size:14px;line-height:1.65;margin:0}
+.note ul{margin:0;padding-right:18px;display:flex;flex-direction:column;gap:4px}
+.note a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--teal);text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+</style>
+</head><body>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">סמלת × GC · סטוריבורד לאישור · נובמבר 2026</div>
+  <h1>ALFA ROMEO TONALE</h1>
+  <p class="lead">בחושך מוחלט, קו אור אחד מצייר את הטונאלה פרט אחרי פרט. בהנעה המוזיקה נפתחת, יוצאים לנסיעה בדמדומים ובלילה, וחוזרים לבמה לשוט גיבור של הרכב המלא. הכותרות יושבות על הצילום, והשורה המשפטית רצה בתחתית לאורך כל הסרטון.</p>
+  <div class="spec"><span class="chip">30 שניות</span><span class="chip">9:16 ו-16:9</span><span class="chip">מוזיקה ואפקטים, בלי קריינות</span><span class="chip">טקסט באנגלית, "עכשיו בישראל" בעברית</span></div>
+</header>
+
+<div class="board" id="board"></div>
+
+<div class="notes">
+  
+  
+  <div class="note">
+    <h3>רפרנסים</h3>
+    <p><a href="https://youtu.be/OGEEQ9VEEmc">Porsche 911 · Exterior &amp; Interior Design</a></p>
+    <p><a href="https://youtu.be/1-qwounu3yA">Bugatti Tourbillon · Pour l'éternité</a></p>
+  </div>
+</div>
+</div>
+
+<script>
+const S=[
+["0:00","T01","קו אור לבן מצייר את קו הגג והכתף בחושך","",""],
+["0:02.5","T02","הקו נוחת על הפנס, שלושת מודולי ה-LED נדלקים","","קו האור הופך לקו הפנס"],
+["0:04.5","T04","הגריל המשולש והסמל, אור עובר על הכרום","ITALIAN BY DESIGN","",0,1],
+["0:07.5","T05","גלגל חוגת טלפון מסתובב לאט","",""],
+["0:09.5","black","שחור ושקט, חצי שנייה","",""],
+["0:10.1","T07","אצבע על כפתור ההנעה שעל ההגה, השעון נדלק. המוזיקה נפתחת","","עיגול הגלגל הופך לעיגול השעון",1],
+["0:11.5","T08","הפנסים האחוריים נדלקים באדום","",""],
+["0:13","T09v2","רחפן ישר מעל הרכב, כביש חשוך בדמדומים","DRIVEN BY PASSION",""],
+["0:15","T11","נסיעה בכביש חוף בשקיעה, מצלמה נמוכה עוקבת","",""],
+["0:16.5","T12bv2","הרכב מתקרב למצלמה בכביש חשוך בלילה, הפנסים דולקים","",""],
+["0:18","T10","גלגל על אספלט רטוב בלילה","",""],
+["0:19","T12","חזרה לבמה, צינורות האור נדלקים מעל הרכב","",""],
+["0:21","T13v2","שוט גיבור: פרופיל צד על רצפה מבריקה, אור עליון מצייר את הגג","ALFA ROMEO TONALE",""],
+["0:24.1","end","לוגו אלפא רומיאו על שחור, ומתחתיו שורת הסיום","",""],
+["0:26.6","closer","הסגיר של סמלת, עם הסאונד שלו","",""]];
+document.getElementById('board').innerHTML=S.map((x,i)=>{
+  const [tc,img,desc,ttl,why,drop,low]=x;
+  let inner;
+  if(img==='black') inner='<div class="black">שקט</div>';
+  else if(img==='end') inner='<div class="endcard"><img src="img/alfa_logo.png" alt="לוגו אלפא רומיאו"><div class="en">The new Alfa Romeo Tonale</div><div class="he">עכשיו בישראל</div></div>';
+  else inner=`<img class="bg" src="img/${img}.jpg" alt="${desc}" loading="lazy">${ttl?`<div class="ttl${low?' low':''}">${ttl}</div>`:''}`;
+  const legal=img==='closer'?'':'<div class="legal"><img src="img/legal.jpg" alt="דרגת זיהום אוויר 9-10, רמת אבזור בטיחותי 3, לפרטים alfaromeo.co.il"></div>';
+  return `<figure class="shot${drop?' drop':''}"><div class="frame"${img==='closer'?' style="border-bottom:1px solid var(--line);border-radius:6px"':''}>${inner}<span class="num">${i+1}</span><span class="tc">${tc}</span></div>${legal}<p class="desc">${desc}</p>${why?`<p class="why">${why}</p>`:''}</figure>`;
+}).join('');
+</script>
+
+</body></html>
